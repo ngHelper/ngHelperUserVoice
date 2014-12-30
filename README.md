@@ -15,7 +15,7 @@ angular.module('appApp', [
 ```
 
 ### Configure the module
-As preparation the module requires an non secure API token form user voice. Visit the admin portal in the settings under integrations and create a *non trusted* api client.
+As preparation the module requires an non secure API token form user voice. Visit the admin portal in the settings under integrations and create a **non trusted** api client.
 
 ```javascript
 .config(function ($uservoiceProvider) {
