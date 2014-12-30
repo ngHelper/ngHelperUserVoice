@@ -13,6 +13,25 @@ angular.module('appApp', [
     'ngHelperUserVoice'
 ]);
 ```
+
+### Configure the module
+As preparation the module requires an non secure API token form user voice. Visit the admin portal in the settings under integrations and create a *non trusted* api client.
+
+```javascript
+.config(function ($uservoiceProvider) {
+  $uservoiceProvider.setSubDomain("<<YOUR SUBDOMAIN>>");
+  $uservoiceProvider.setApiKey("<<YOUR API TOKEN>>");
+```
+
+### Use the service to open a ticket
+```javascript
+$uservoice.openTicket("YOUR NAME", "YOUR EMAIL", "YOUR SUBJECT", "YOUR MESSAGE").then(function(ticketId) {
+      alert("Ticket with id: " + ticketId + " created"); 
+    }).catch(function(error) {
+      alert("Error: " + error);
+    });
+```
+
 ## Contributing
 
 1. Fork it!
